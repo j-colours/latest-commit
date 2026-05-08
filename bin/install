@@ -18,5 +18,4 @@ else
   ln -sf /usr/local/lib/Latest_commit/bin/latest_commit.sh /usr/local/bin/lcommit
 fi 
 
-
 exit 0  # success
