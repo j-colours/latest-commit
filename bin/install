@@ -15,7 +15,10 @@ if [ -d "/usr/local/lib/Latest_Commit" ]; then
   exit 0 
 else 
   cp -vr $(pwd) /usr/local/lib/
-  ln -sf /usr/local/lib/Latest_commit/bin/latest_commit.sh /usr/local/bin/lcommit
+
+  chmod +x "/usr/local/lib/$(basename $PWD)/bin/latest_commit.sh"
+
+  ln -sf /usr/local/lib/$(basename $PWD)/bin/latest_commit.sh /usr/local/bin/lcommit
 fi 
 
 exit 0  # success
