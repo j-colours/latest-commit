@@ -23,11 +23,16 @@ main() {
       exit 1 # exit failure
     fi
 
+    echo
+    echo "[$(basename $PWD)]"
+    echo
+
     git log | head -n 6
 
-    # echo $PWD | cut -d "/" -f- --> didn't work
+    # echo $PWD | cut -d "/" -f- --> didn't work --> to work must be echo $PWD | rev | cut -d "/" -f1 | rev
+    # echo $PWD | awk -F'/' '{print $NF}' --> works!
     echo
-    echo "Repo: $(basename $PWD)"
+    echo "[$(basename $PWD)]"
   else
     echo
     echo "Error: Rerun in a git repo (directory)..."
