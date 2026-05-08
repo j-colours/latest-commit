@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# install script
+# Author: jcolours
+# Date: 2026-05-08
+# Description: installs tool onto system 
+
+if [ "$EUID" -ne 0 ]; then 
+  echo "Error: Please use sudo..."
+  exit 1
+fi
+
+if [ -d "/usr/local/lib/Latest_Commit" ]; then 
+  echo "Tool already installed on system..."
+  exit 0 
+else 
+  cp -vr $(pwd) /usr/local/lib/
+  ln -sf /usr/local/lib/Latest_commit/bin/latest_commit.sh /usr/local/bin/lcommit
+fi 
+
+
+exit 0  # success

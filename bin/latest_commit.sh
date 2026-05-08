@@ -24,6 +24,9 @@ main() {
     fi
 
     git log | head -n 6
+
+    # echo $PWD | cut -d "/" -f- --> didn't work
+    echo "Repo: $(basename $PWD)"
   else
     echo
     echo "Error: Rerun in a git repo (directory)..."
