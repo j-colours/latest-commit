@@ -16,9 +16,9 @@ if [ -d "/usr/local/lib/Latest_Commit" ]; then
 else
   cp -vr $(pwd) /usr/local/lib/
 
-  chmod +x "/usr/local/lib/latest-commit/bin/latest_commit.sh"
+  chmod +x "/usr/local/lib/latest-commit/latest_commit.sh"
 
-  ln -sf /usr/local/lib/latest-commit/bin/latest_commit.sh /usr/local/bin/lcommit
+  ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
 fi
 
 exit 0 # success
