@@ -35,7 +35,7 @@ main() {
     echo "[$(basename $PWD)]"
   else
     echo
-    echo "Error: Rerun in a git repo (directory)..."
+    echo "Error: Not in a git repo (directory)..."
     exit 1 # exit failure
   fi
 
