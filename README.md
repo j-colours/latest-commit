@@ -11,4 +11,4 @@ run it using `wsl`. ***MUST HAVE SUDO PERMISSIONS***. But can install using the 
 
 # Developer
 
-<shrewsburyj2@winthrop.edu> - jcolours
+jcolours - <shrewsburyj2@winthrop.edu>

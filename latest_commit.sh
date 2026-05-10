@@ -32,6 +32,7 @@ main() {
 
     # echo $PWD | cut -d "/" -f- --> didn't work --> to work must be echo $PWD | rev | cut -d "/" -f1 | rev
     # echo $PWD | awk -F'/' '{print $NF}' --> works!
+
     echo
     echo $'\x1b[33m'"[$(basename $PWD)]"$'\x1b[0m' # \x1b hex for ESC character (27)
   else
