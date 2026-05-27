@@ -10,7 +10,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-if [ -d "/usr/local/lib/Latest_Commit" ]; then
+if [ -d "/usr/local/lib/latest-commit" ]; then
   echo "Tool already installed on system..."
   exit 0
 else
