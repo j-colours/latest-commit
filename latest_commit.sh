@@ -38,7 +38,7 @@ main() {
     # have an exit code of 0 then error
     if [ $? -ne 0 ]; then
       echo
-      echo -e "$'\033[31m'Error$'\033[0m': No commits currently in repo..."
+      echo -e "\033[31mError\033[0m: No commits currently in repo..."
       echo "       rerun when atleast one commit is made."
       exit 1 # exit failure
     fi
@@ -52,10 +52,10 @@ main() {
     # echo $PWD | cut -d "/" -f- --> didn't work --> to work must be echo $PWD | rev | cut -d "/" -f1 | rev
     # echo $PWD | awk -F'/' '{print $NF}' --> works!
 
-    echo $'\033[33m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
+    echo -e $'\033[33m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
   else
     echo
-    echo "$'\033[31m'Error$'\033[0m': Not in a git repo (directory)..."
+    echo -e "\033[31mError\033[0m: Not in a git repo (directory)..."
     exit 1 # exit failure
   fi
 
