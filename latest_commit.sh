@@ -14,13 +14,19 @@ main() {
     GITHUB="https://github.com/j-colours/latest-commit/archive/refs/heads/main.zip"
     CODEBERG="https://codeberg.org/j-colours/latest-commit/archive/refs/heads/main.zip"
 
-    curl -sSL $GITHUB -o /tmp/latest-commit.zip || \ 
-    curl -sSL $CODEBERG -o /tmp/latest-commit.zip
+    if curl -sSL $GITHUB -o /tmp/latest-commit.zip; then
+      EXTRACT="latest-commit-main"
+    elif curl -sSL $CODEBERG -o /tmp/latest-commit.zip; then
+      EXTRACT="latest-commit"
+    else
+      echo -e "\033[31mUpdate failed\033[0m: could not download from any source"
+      exit 1
+    fi
 
     sudo rm -rf /usr/local/lib/latest-commit
 
     sudo unzip /tmp/latest-commit.zip -d /tmp/latest-commit
-    sudo mv /tmp/latest-commit/latest-commit /usr/local/lib/latest-commit
+    sudo mv /tmp/latest-commit/$EXTRACT /usr/local/lib/latest-commit
     sudo rm -rf /tmp/latest-commit.zip /tmp/latest-commit
     sudo chmod +x /usr/local/lib/latest-commit/latest_commit.sh
     sudo ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
