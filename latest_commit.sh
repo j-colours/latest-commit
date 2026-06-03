@@ -22,7 +22,7 @@ main() {
     chmod +x /usr/local/lib/latest-commit/latest_commit.sh
     ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
 
-    exit 0
+    exit 0 # status success
   fi
 
   if [ -d ".git" ]; then
