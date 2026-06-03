@@ -19,7 +19,10 @@ main() {
     elif curl -sSL $CODEBERG -o /tmp/latest-commit.zip; then
       EXTRACT="latest-commit"
     else
+      echo
       echo -e "\033[31mUpdate failed\033[0m: could not download from any source"
+      echo
+
       exit 1
     fi
 
@@ -59,9 +62,11 @@ main() {
     # echo $PWD | awk -F'/' '{print $NF}' --> works!
 
     echo -e $'\033[33m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
+    echo
   else
     echo
     echo -e "\033[31mError\033[0m: Not in a git repo (directory)..."
+    echo
     exit 1 # exit failure
   fi
 
