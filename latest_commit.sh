@@ -10,17 +10,20 @@
 main() {
 
   if [[ "$1" == "-u" || "$1" == "--update" ]]; then
+
     GITHUB="https://github.com/j-colours/latest-commit/archive/refs/heads/main.zip"
     CODEBERG="https://codeberg.org/j-colours/latest-commit/archive/refs/heads/main.zip"
 
     curl -sSL $GITHUB -o /tmp/latest-commit.zip || \ 
     curl -sSL $CODEBERG -o /tmp/latest-commit.zip
 
-    unzip /tmp/latest-commit.zip -d /tmp/latest-commit
-    mv /tmp/latest-commit/latest-commit /usr/local/lib/latest-commit
-    rm -rf /tmp/latest-commit.zip /tmp/latest-commit
-    chmod +x /usr/local/lib/latest-commit/latest_commit.sh
-    ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
+    sudo rm -rf /usr/local/lib/latest-commit
+
+    sudo unzip /tmp/latest-commit.zip -d /tmp/latest-commit
+    sudo mv /tmp/latest-commit/latest-commit /usr/local/lib/latest-commit
+    sudo rm -rf /tmp/latest-commit.zip /tmp/latest-commit
+    sudo chmod +x /usr/local/lib/latest-commit/latest_commit.sh
+    sudo ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
 
     exit 0 # status success
   fi
