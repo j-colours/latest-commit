@@ -17,7 +17,7 @@ main() {
     curl -sSL $CODEBERG -o /tmp/latest-commit.zip
 
     unzip /tmp/latest-commit.zip -d /tmp/latest-commit
-    mv /tmp/latest-commit/latest-commit-main /usr/local/lib/latest-commit
+    mv /tmp/latest-commit/latest-commit /usr/local/lib/latest-commit
     rm -rf /tmp/latest-commit.zip /tmp/latest-commit
     chmod +x /usr/local/lib/latest-commit/latest_commit.sh
     ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
