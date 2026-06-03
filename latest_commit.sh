@@ -52,7 +52,7 @@ main() {
     # echo $PWD | cut -d "/" -f- --> didn't work --> to work must be echo $PWD | rev | cut -d "/" -f1 | rev
     # echo $PWD | awk -F'/' '{print $NF}' --> works!
 
-    echo $'\033[32m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
+    echo $'\033[33m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
   else
     echo
     echo "$'\033[31m'Error$'\033[0m': Not in a git repo (directory)..."
