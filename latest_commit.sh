@@ -49,6 +49,7 @@ main() {
       echo
       echo -e "\033[31mError\033[0m: No commits currently in repo..."
       echo "       rerun when atleast one commit is made."
+      /usr/local/lib/latest-commit/system_echo.sh
       exit 1 # exit failure
     fi
 
@@ -62,11 +63,11 @@ main() {
     # echo $PWD | awk -F'/' '{print $NF}' --> works!
 
     echo -e $'\033[33m'"[$(basename $PWD)]"$'\033[0m' # \x1b hex for ESC character (27) or 033
-    echo
+    /usr/local/lib/latest-commit/system_echo.sh
   else
     echo
     echo -e "\033[31mError\033[0m: Not in a git repo (directory)..."
-    echo
+    /usr/local/lib/latest-commit/system_echo.sh
     exit 1 # exit failure
   fi
 

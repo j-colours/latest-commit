@@ -17,6 +17,7 @@ else
   cp -vr $(pwd) /usr/local/lib/
 
   chmod +x "/usr/local/lib/latest-commit/latest_commit.sh"
+  chmod +x "/usr/local/lib/latest-commit/system_echo.sh"
 
   ln -sf /usr/local/lib/latest-commit/latest_commit.sh /usr/local/bin/lcommit
 fi
